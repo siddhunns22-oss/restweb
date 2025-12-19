@@ -28,10 +28,344 @@ Validate the HTML code.
 Publish the website in the given URL.
 
 ## PROGRAM:
+```
+contact.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory Bistro - Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
 
-Include your program
+    <div class="contact-page">
+        <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Visit Us</h3>
+                    <p>123 Culinary Avenue<br>Food District, City 12345</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p>info@crfoods.com<br>reservations@crfoods.com</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕒</div>
+                    <h3>Opening Hours</h3>
+                    <p>Mon - Fri: 11:00 AM - 10:00 PM<br>
+                    Sat - Sun: 10:00 AM - 11:00 PM</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <form onsubmit="handleContact(event)" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="reservation">Reservation</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="catering">Catering</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h2>Find Us Here</h2>
+            <div class="map-placeholder">
+                <div class="map-icon">🗺️</div>
+                <p>Map Location</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CR Foods. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function handleContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            alert('Thank you for contacting us, ' + name + '! We will get back to you soon at ' + email);
+        }
+    </script>
+</body>
+</html>
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR Restaurant - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CR Restaurant</h1>
+            <p>Experience culinary excellence in every bite</p>
+            <a href="menu.html" class="cta-button">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🍽️</div>
+            <h3>Fresh Ingredients</h3>
+            <p>We source only the finest, locally-grown ingredients to create dishes that burst with authentic flavors and nutrition.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">👨‍🍳</div>
+            <h3>Expert Chefs</h3>
+            <p>Our award-winning culinary team brings decades of experience and passion to every plate they create.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>5-Star Service</h3>
+            <p>From the moment you arrive until your last bite, our dedicated staff ensures an unforgettable dining experience.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CR Foods. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+login.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory Bistro - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Welcome Back</h1>
+                <p>Login to your account</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="login-button">Login</button>
+
+                <div class="login-footer">
+                    <p>Don't have an account? <a href="#">Sign up</a></p>
+                    <p><a href="#">Forgot password?</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            alert('Login functionality would be connected to backend. Email: ' + email);
+        }
+    </script>
+</body>
+</html>
+
+menu.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory Bistro - Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-page">
+        <div class="menu-header">
+            <h1>Our Signature Dishes</h1>
+            <p>Crafted with passion, served with love</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="1.jpg">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Grilled Ribeye Steak</h3>
+                    <p>Premium aged beef, perfectly grilled with herb butter and seasonal vegetables</p>
+                    <div class="price">$32.99</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image menu-item-2">
+                    <img src="2.jpg">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Truffle Pasta</h3>
+                    <p>Handmade fettuccine with wild mushrooms, truffle oil, and parmesan cream</p>
+                    <div class="price">$24.99</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image menu-item-3">
+                    <img src="3.jpg">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Lobster Thermidor</h3>
+                    <p>Fresh Atlantic lobster in creamy cognac sauce, served with asparagus</p>
+                    <div class="price">$45.99</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image menu-item-4">
+                    <img src="4.jpg">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Chef's Sushi Platter</h3>
+                    <p>Assorted premium sushi and sashimi with wasabi and pickled ginger</p>
+                    <div class="price">$38.99</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image menu-item-5">
+                    <img src="5.jpg">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Chocolate Lava Cake</h3>
+                    <p>Warm chocolate cake with molten center, vanilla ice cream and berries</p>
+                    <div class="price">$12.99</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image menu-item-6">
+                    <img src="6.jpg">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Wine Selection</h3>
+                    <p>Premium wines from around the world, perfectly paired with your meal</p>
+                    <div class="price">$15-65</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CR Foods. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+```
+
 ## OUTPUT:
-Include the Screenshot
+
+![alt text](<Screenshot 2025-12-17 160107.png>) 
+![alt text](<Screenshot 2025-12-17 160126.png>) 
+![alt text](<Screenshot 2025-12-17 160153.png>) 
+![alt text](<Screenshot 2025-12-17 160222.png>)
 
 ## RESULT:
 The program for designing software company website using HTML and CSS is completed successfully.
